@@ -1,2 +1,2 @@
 # Education
-Education projects
+Education projects from https://stepik.org/course/58852/info
