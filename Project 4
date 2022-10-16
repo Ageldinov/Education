@@ -8,7 +8,7 @@ lower_lang_ru = 'абвгдежзиклмнопрстуфхцчшщъыьэюя'
 print('Выберите язык. ru or en')
 lang = input()
 '''
-print('Укажите напрадение сдвига. lert or right')
+print('Укажите напрадение сдвига. left or right')
 dir = input()
 
 print('Укажите шаг сдвига')
@@ -43,14 +43,14 @@ if dir == 'left':
 #    if lang == 'en':
       if txt[i] in upper_lang_en:
         a = ord(txt[i]) - step
-        if a < 65:
+        if a <= 64:
           a = 90-(65-a)
           print(chr(a), end='')
         else:
           print(chr(a), end='')
       elif txt[i] in lower_lang_en:
         a = ord(txt[i]) - step
-        if a < 97:
+        if a <= 96:
           a = 122-(97-a)
           print(chr(a), end='')
         else:
@@ -64,15 +64,15 @@ if dir == 'right':
 #    if lang == 'en':   
       if txt[i] in upper_lang_en:
         a = ord(txt[i]) + step
-        if a > 91:
-          a = (a - 90) + 65
+        if a >= 91:
+          a = (a - 90) + 64
           print(chr(a), end='')
         else:
           print(chr(a), end='')
       elif txt[i] in lower_lang_en:
         a = ord(txt[i]) + step
-        if a > 123:
-          a = (a - 122) + 97 
+        if a >= 123:
+          a = (a - 122) + 96 
           print(chr(a), end='')
         else:
           print(chr(a), end='')
