@@ -1,0 +1,40 @@
+import random
+
+digits = '0123456789'
+lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
+uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+punctuation = '!#$%&*+-=?@^_.'
+
+chars = []
+
+print('Количество паролей для генерации')                                     #Выбор значений в пароле
+p_count = int(input())
+print('Длина одного пароля')
+p_len = int(input())
+print('Включать ли цифры 0123456789?')
+p_numbers = input()
+if p_numbers == 'yes':
+  chars.extend(digits)
+print('Включать ли прописные буквы ABCDEFGHIJKLMNOPQRSTUVWXYZ?')
+p_upper = input()
+if p_upper == 'yes':
+  chars.extend(uppercase_letters)
+print('Включать ли строчные буквы abcdefghijklmnopqrstuvwxyz?')
+p_lower = input()
+if p_lower == 'yes':
+  chars.extend(lowercase_letters)
+print('Включать ли символы !#$%&*+-=?@^_?')
+p_simbols = input()
+if p_simbols == 'yes':
+  chars.extend(punctuation)
+
+
+def generate_pasword(p_count, p_len):                                         #Функция создания пароля по заданным значениям
+  for i in range(p_count):
+    new_pasword = []
+    for j in range(p_len):
+      new_pasword.extend(random.choice(chars))
+    print('Пароль номер', i+1)
+    print(*new_pasword, sep='')
+
+new_pasword = generate_pasword(p_count, p_len)
