@@ -44,14 +44,14 @@ if dir == 'left':
       if txt[i] in upper_lang_en:
         a = ord(txt[i]) - step
         if a <= 64:
-          a = 90-(65-a)
+          a = 90-(64-a)
           print(chr(a), end='')
         else:
           print(chr(a), end='')
       elif txt[i] in lower_lang_en:
         a = ord(txt[i]) - step
         if a <= 96:
-          a = 122-(97-a)
+          a = 122-(96-a)
           print(chr(a), end='')
         else:
           print(chr(a), end='')
