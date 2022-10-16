@@ -1,0 +1,81 @@
+print('Добро пожаловать в шифровальщик')
+
+upper_lang_en = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+lower_lang_en = 'abcdefghijklmnopqrstuvwxyz'
+upper_lang_ru = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+lower_lang_ru = 'абвгдежзиклмнопрстуфхцчшщъыьэюя'
+'''
+print('Выберите язык. ru or en')
+lang = input()
+'''
+print('Укажите напрадение сдвига. lert or right')
+dir = input()
+
+print('Укажите шаг сдвига')
+step = int(input())
+
+print('Введите текст')
+txt = input()
+s = len(txt)
+'''
+for i in range(s):
+    if lang == 'ru':
+      if txt[i] in upper_lang_ru:
+        a = ord(txt[i]) - step
+        print(a)
+        if a < 193:
+          a = 223-(193-a)
+          print(a)
+          print(chr(a), end='')
+      elif txt[i] in lower_lang_ru:
+        print(2)
+        a = ord(txt[i]) - step
+        if a < 1073:
+          a = 1103-(1072-a)
+          print(chr(a), end='')
+      else:
+        print(3)
+        a = ord(txt[i])
+        print(chr(a), end='')
+'''
+if dir == 'left':
+  for i in range(s):
+#    if lang == 'en':
+      if txt[i] in upper_lang_en:
+        a = ord(txt[i]) - step
+        if a < 65:
+          a = 90-(65-a)
+          print(chr(a), end='')
+        else:
+          print(chr(a), end='')
+      elif txt[i] in lower_lang_en:
+        a = ord(txt[i]) - step
+        if a < 97:
+          a = 122-(97-a)
+          print(chr(a), end='')
+        else:
+          print(chr(a), end='')
+      else:
+        a = ord(txt[i])
+        print(chr(a), end='')
+
+if dir == 'right':
+  for i in range(s):
+#    if lang == 'en':   
+      if txt[i] in upper_lang_en:
+        a = ord(txt[i]) + step
+        if a > 91:
+          a = (a - 90) + 65
+          print(chr(a), end='')
+        else:
+          print(chr(a), end='')
+      elif txt[i] in lower_lang_en:
+        a = ord(txt[i]) + step
+        if a > 123:
+          a = (a - 122) + 97 
+          print(chr(a), end='')
+        else:
+          print(chr(a), end='')
+      else:
+        a = ord(txt[i])
+        print(chr(a), end='')
