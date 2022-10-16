@@ -8,7 +8,7 @@ lower_lang_ru = 'абвгдежзиклмнопрстуфхцчшщъыьэюя'
 print('Выберите язык. ru or en')
 lang = input()
 '''
-print('Укажите напрадение сдвига. left or right')
+print('Укажите направление сдвига. left or right')
 dir = input()
 
 print('Укажите шаг сдвига')
